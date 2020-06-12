@@ -260,3 +260,4 @@ C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigS
 C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.pdb
 C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddNameColumnToApplicationUser.resources
 C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.csprojResolveAssemblyReference.cache
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddAttendance.resources
