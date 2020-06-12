@@ -346,7 +346,6 @@ C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\bin\Microsoft.Owin
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.InitialModel.resources
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.CreateTableCourse.resources
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.CreateTableCourse1.resources
