@@ -355,3 +355,9 @@ C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchoo
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.csproj.GenerateResource.Cache
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.dll
 C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.pdb
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Net.Http.Formatting.dll
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Web.Http.dll
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Web.Http.WebHost.dll
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Net.Http.Formatting.xml
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Web.Http.xml
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Web.Http.WebHost.xml
