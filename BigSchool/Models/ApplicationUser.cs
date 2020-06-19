@@ -25,9 +25,15 @@ namespace BigSchool.Models
             Followees = new Collection<Following>();
         }
 
-        internal Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
+        //internal Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            throw new NotImplementedException();
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            return userIdentity;
         }
     }
 }

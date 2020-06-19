@@ -16,13 +16,13 @@
                     </div>
                 </div>
                 <div class="details">
-                    <span class="lecturer">
+                    <div class="lecturer">
                         @course.Lecturer.Name
                         @if (Model.ShowAction)
                         {
                         <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
                         }                   
-                     </span>
+                     </div>
                     
                     <span class="category">
                         @course.Category.Name                   

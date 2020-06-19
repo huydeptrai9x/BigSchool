@@ -361,5 +361,5 @@ C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Net
 C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Web.Http.xml
 C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\bin\System.Web.Http.WebHost.xml
 C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddFollowingsTable.resources
-C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.csprojResolveAssemblyReference.cache
 C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddIsCanceledColumnToCourse.resources
+C:\Users\buikh\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.csprojResolveAssemblyReference.cache

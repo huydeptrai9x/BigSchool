@@ -124,5 +124,24 @@ namespace BigSchool.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [Authorize]
+        public ActionResult Following()
+        {
+            var userId = User.Identity.GetUserId();
+            var followees = _dbContext.Followings
+                .Where(a => a.FollowerId == userId)
+                .Include(f => f.Followee)
+                .Include(f => f.Follower)
+                .ToList();
+
+            var viewModel = new CoursesViewModel
+            {
+                ListOfFollowings = followees,
+                
+
+            };
+
+        } 
     }
 }
