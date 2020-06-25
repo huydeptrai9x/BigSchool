@@ -25,6 +25,14 @@ namespace BigSchool.ViewModels
         [Required]
         public byte Category { get; set; }
 
+        public IEnumerable<Course> UpcommingCourses { get; set; }
+        public bool ShowAction { get; set; }
+
+        public List<Attendance> ListOfAttendedCourses { get; set; }
+
+        public List<Following> ListOfFollowings { get; set; }
+        public List<Following> ListOfFollowers { get; set; }
+
         public IEnumerable<Category> Categories { get; set; }
         public string Heading { get; set; }
         public string Action

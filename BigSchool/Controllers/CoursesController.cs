@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -48,24 +49,55 @@ namespace BigSchool.Controllers
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place
             };
-            _dbContext.Courses.Add(course);
+            _dbContext.Course.Add(course);
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult Detail(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var viewModel = new CourseViewModel();
+            var course = _dbContext.Course.Where(c => c.Id == id).Include(a => a.Lecturer).Include(a => a.Category);
+            var listOfAttendedCourses = _dbContext.Attendance
+                    .Include(a => a.Course)
+                    .Include(a => a.Attendee)
+                    .Where(a => a.AttendeeId == userId).ToList();
+            viewModel = new CourseViewModel
+            {
+                ListOfAttendedCourses = listOfAttendedCourses,
+                UpcommingCourses = course,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
+        }        
 
         [Authorize]
         public ActionResult Attending()
         {
             var userId = User.Identity.GetUserId();
 
-            var courses = _dbContext.Attendances
+            var listOfAttendedCourses = _dbContext.Attendance
+                .Include(a => a.Course)
+               .Include(a => a.Attendee)
+               .Where(a => a.AttendeeId == userId).ToList();
+
+            var followingLecturers = _dbContext.Followings
+               .Include(f => f.Followee)
+               .Include(f => f.Follower)
+               .Where(a => a.FollowerId == userId)
+               .ToList();
+
+            var courses = _dbContext.Attendance
                 .Where(a => a.AttendeeId == userId)
                 .Select(a => a.Course)
                 .Include(l => l.Lecturer)
                 .Include(l => l.Category)
                 .ToList();
-            var viewModel = new CoursesViewModel
+            var viewModel = new CourseViewModel
             {
+                ListOfAttendedCourses = listOfAttendedCourses,
+                ListOfFollowings = followingLecturers,
                 UpcommingCourses = courses,
                 ShowAction = User.Identity.IsAuthenticated
             };
@@ -76,7 +108,7 @@ namespace BigSchool.Controllers
         public ActionResult Mine()
         {
             var userId = User.Identity.GetUserId();
-            var courses = _dbContext.Courses
+            var courses = _dbContext.Course
                 .Where(c => c.LecturerId == userId && c.DateTime > DateTime.Now)
                 .Include(l => l.Lecturer)
                 .Include(l => l.Category)
@@ -89,7 +121,7 @@ namespace BigSchool.Controllers
         public ActionResult Edit(int id)
         {
             var userId = User.Identity.GetUserId();
-            var course = _dbContext.Courses.Single(c => c.Id == id && c.LecturerId == userId);
+            var course = _dbContext.Course.Single(c => c.Id == id && c.LecturerId == userId);
 
             var viewModel = new CourseViewModel
             {
@@ -115,7 +147,7 @@ namespace BigSchool.Controllers
                 return View("Create", viewModel);
             }
             var userId = User.Identity.GetUserId();
-            var course = _dbContext.Courses.Single(c => c.Id == viewModel.Id && c.LecturerId == userId);
+            var course = _dbContext.Course.Single(c => c.Id == viewModel.Id && c.LecturerId == userId);
 
             course.Place = viewModel.Place;
             course.DateTime = viewModel.GetDateTime();
@@ -123,25 +155,7 @@ namespace BigSchool.Controllers
             _dbContext.SaveChanges();
 
             return RedirectToAction("Index", "Home");
-        }
-
-        [Authorize]
-        public ActionResult Following()
-        {
-            var userId = User.Identity.GetUserId();
-            var followees = _dbContext.Followings
-                .Where(a => a.FollowerId == userId)
-                .Include(f => f.Followee)
-                .Include(f => f.Follower)
-                .ToList();
-
-            var viewModel = new CoursesViewModel
-            {
-                ListOfFollowings = followees,
-                
-
-            };
-
-        } 
+        }  
+             
     }
 }
