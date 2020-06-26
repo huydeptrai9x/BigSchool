@@ -4,13 +4,12 @@
 }
 @using Microsoft.AspNet.Identity
 <div class="Row">
-    <h1>Big School</h1>
+    <h1>Schedule</h1>
     <ul class="course">
         @foreach (var course in Model.UpcommingCourses)
         {
 
             <li>
-
                 <div class="date">
                     <div class="day">
                         @course.DateTime.ToString("dd")
@@ -19,19 +18,15 @@
                         @course.DateTime.ToString("MM")
                     </div>
                 </div>
-
                 <div class="details">
                     <div class="lecturer">
-
                         @course.Lecturer.Name
-
                         @if (Model.ShowAction)
                         {
                             if (@course.LecturerId == User.Identity.GetUserId()) { }
                             else
                             {
-                                bool isFollowing = Model.ListOfFollowings.Any(f => f.Followee.Id == @course.LecturerId);
-                                if (isFollowing == true)
+                                bool isFollowing = Model.ListOfFollowings.Any(f => f.Followee.Id == @course.LecturerId); if (isFollowing == true)
                                 {<button data-user-id="@course.LecturerId" class="btn btn-link btn-sm js-toggle-follow">
                             Following
                         </button>
@@ -46,9 +41,7 @@
                         }
                     </div>
                     <div class="category">
-
                         @course.Category.Name
-
                         @if (Model.ShowAction)
                         {
                             if (@course.LecturerId == User.Identity.GetUserId())
@@ -71,7 +64,6 @@
                         Detail
                     </a>
                 </div>
-
             </li>
         }
     </ul>

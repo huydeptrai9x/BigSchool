@@ -1,24 +1,20 @@
 ﻿using BigSchool.DTOs;
 using BigSchool.Models;
 using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace BigSchool.Controllers
 {
+
     public class FollowingsController : ApiController
     {
-        private readonly ApplicationDbContext _dbContext;
 
+        private readonly ApplicationDbContext _dbContext;
         public FollowingsController()
         {
             _dbContext = new ApplicationDbContext();
         }
-
         [HttpPost]
         public IHttpActionResult Follow(FollowingDto followingDto)
         {
@@ -28,20 +24,20 @@ namespace BigSchool.Controllers
                 var following = new Following
                 {
                     FollowerId = userId,
-                    FolloweeId = followingDto.FolloweeId
+                    FolloweeId = followingDto.FolloweeId,
                 };
 
                 _dbContext.Followings.Attach(following);
                 _dbContext.Followings.Remove(following);
                 _dbContext.SaveChanges();
-                
                 return Ok();
             }
-            else {
+            else
+            {
                 var following = new Following
                 {
-                    FolloweeId = userId,
-                    FollowerId = followingDto.FolloweeId
+                    FollowerId = userId,
+                    FolloweeId = followingDto.FolloweeId,
                 };
 
                 _dbContext.Followings.Add(following);

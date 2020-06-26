@@ -460,3 +460,6 @@ C:\Users\huydeptrai\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug
 C:\Users\huydeptrai\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.dll
 C:\Users\huydeptrai\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.pdb
 C:\Users\huydeptrai\OneDrive\Máy tính\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddFollowingsTable.resources
+C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.Migrations.AddIsCanceledColumnToCourse.resources
+C:\Users\Administrator\Desktop\New folder\BigSchool\BigSchool\obj\Debug\BigSchool.csprojResolveAssemblyReference.cache

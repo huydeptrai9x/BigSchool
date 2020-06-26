@@ -507,7 +507,7 @@ namespace BigSchool.Controllers
         {
             var userId = User.Identity.GetUserId();
             var followees = _dbContext.Followings
-                .Where(a => a.FollowerId == userId)
+               .Where(a => a.FollowerId == userId)
                .Include(f => f.Followee)
                .Include(f => f.Follower)
                .ToList();
@@ -516,6 +516,7 @@ namespace BigSchool.Controllers
                 .Include(f => f.Followee)
                 .Include(f => f.Follower)
                 .ToList();
+
             var viewModel = new CourseViewModel
             {
                 ListOfFollowers = followers,
@@ -524,5 +525,6 @@ namespace BigSchool.Controllers
             };
             return View(viewModel);
         }
+
     }
 }
