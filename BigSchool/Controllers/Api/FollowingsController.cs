@@ -24,8 +24,9 @@ namespace BigSchool.Controllers
                 var following = new Following
                 {
                     FollowerId = userId,
-                    FolloweeId = followingDto.FolloweeId,
+                    FolloweeId = followingDto.FolloweeId, 
                 };
+
 
                 _dbContext.Followings.Attach(following);
                 _dbContext.Followings.Remove(following);
