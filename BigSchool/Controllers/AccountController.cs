@@ -23,6 +23,7 @@ namespace BigSchool.Controllers
 
         public AccountController()
         {
+            _dbContext = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
